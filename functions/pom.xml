@@ -23,7 +23,7 @@
 
 		<!-- customize those two properties. The functionAppName should be unique across Azure -->
 		<functionResourceGroup>my-spring-function-resource-group</functionResourceGroup>
-		<functionAppName>my-spring-function</functionAppName>
+		<functionAppName>function-java</functionAppName>
 
 		<functionAppRegion>westeurope</functionAppRegion>
 		<stagingDirectory>${project.build.directory}/azure-functions/${functionAppName}</stagingDirectory>
@@ -109,21 +109,20 @@
             </plugins>
         </pluginManagement>
 
-		<plugins>
-			<!-- <plugin>
-				<groupId>org.springframework.boot</groupId>
-				<artifactId>spring-boot-maven-plugin</artifactId>
-			</plugin> -->
+		<plugins>		<plugin>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-maven-plugin</artifactId>
+		</plugin>
 
-			<plugin>
+		<plugin>
                 <groupId>com.microsoft.azure</groupId>
                 <artifactId>azure-functions-maven-plugin</artifactId>
                 <configuration>
-                    <resourceGroup>${functionResourceGroup}</resourceGroup>
+                    <resourceGroup>rg-trainee-m8irw2-1_rg</resourceGroup>
                     <appName>${functionAppName}</appName>
-                    <region>${functionAppRegion}</region>
+                    <region>francecentral</region>
                     <runtime>
-                        <os>linux</os>
+                        <os>windows</os>
                         <javaVersion>11</javaVersion>
                     </runtime>
                     <appSettings>
